@@ -1,0 +1,113 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+ <?php
+        $office = //If there was a previously selected value set it here
+        $con=mysql_connect("localhost", "root","");
+mysql_select_db("test");
+$num=200458;
+$query1 = "SELECT d.doc_name from doctor d, visits v,login l where v.eid=l.eid and v.d_id=d.d_id and v.eid='".$num."'";
+$query2 = "SELECT d.city from doctor d,visits v,login l where v.eid=l.eid and v.d_id=d.d_id and v.eid='".$num."'";
+$query3 = "SELECT p.p_name from login l,product p where p.div_id=l.div_id and l.eid='".$num."'";
+$result1 = mysql_query($query1);
+$result2 = mysql_query($query2);
+$result3 = mysql_query($query3);
+$doctor = '';
+$city='';
+$prod='';
+//$record = mysql_fetch_array($result);
+
+
+ while($record1 = mysql_fetch_array($result1))
+                        {
+                            //$selected = ($office==$record['id']) ? ' selected="selected"' : '';
+                            $doctor .= "<option>".$record1['doc_name']."</option>";
+
+
+                        }
+while($record2 = mysql_fetch_array($result2))
+                        {
+                            //$selected = ($office==$record['id']) ? ' selected="selected"' : '';
+                            $city .= "<option>".$record2['city']."</option>";
+
+
+                        }
+
+
+                        mysql_close($con);
+?>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+
+      <center> <input type="date"></center>
+      <table>
+          <tr>
+              <td><select id="chemist">
+                      <option>chemist</option>
+                      <option>chemist</option>
+                      <option>chemist</option></td>
+              <td><select id="city">
+                      <option>hubli</option>
+                      <option>banglore</option>
+                      <option>chemist</option></td>
+              <td><select id="product">
+                      <option>product</option>
+                      <option>chemist</option>
+                      <option>chemist</option></td>
+      </table>
+      <br>
+      <br>
+      <table>
+          <tr>
+              <td><b>Opening stock</b>
+
+              </td>
+              <td><input type="text" id="op" ><br>
+
+              </td>
+          </tr>
+
+          <tr>
+              <td> <b>Sales</b>
+
+              </td>
+              <td><input type="text" id="sales" ><br>
+
+              </td>
+          </tr>
+
+          <tr>
+              <td><b>Report</b>
+
+              </td>
+              <td><input type="text" id="report" ><br>
+
+              </td>
+          </tr>
+
+          <tr>
+              <td>
+      <b>Closing Stock</b>
+              </td>
+              <td>
+      <input type="text" id="cl" >
+              </td>
+          </tr>
+      
+     
+     
+
+      </table>
+
+                  
+
+        
+
+  </body>
+</html>

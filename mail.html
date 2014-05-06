@@ -1,0 +1,46 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <form action = "sm.php" method=  "POST">
+        <br><br><table cellspacing="20">
+            
+            
+            <tr>
+                <td> FROM: </td>
+                <td><input type="text" size="80" name="from"></td>
+            </tr>
+            <tr>
+                <td>CC: </td>
+                <td><input type="text" size="80" name="cc"></td>
+            </tr>
+            <tr>
+                <td> BCC: </td>
+                <td><input type="text" size="80" name="bcc"></td>
+            </tr>
+            <tr>
+                <td>Sub: </td>
+                <td><textarea cols="80" rows="1" name="sub"></textarea></td>
+            </tr>
+            <tr>
+                <td> Body:</td>
+                <td> <textarea cols="120" rows="7" name="body"></textarea></td>
+            </tr>
+            
+        </table>
+       
+        <input type="submit" value="send" onclick="sm.php"  />
+   
+    
+        </form>
+   
+    
+    </body>
+</html>
